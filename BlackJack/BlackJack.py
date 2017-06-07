@@ -28,11 +28,17 @@ def IshodRunde(i,h):
         if (spil[i] == 1 and igrac <=10):
             igrac+=11
         else:
-            igrac+=spil[i]
+            if (igrac + spil[i]<=21):
+               igrac+=spil[i]
         if(spil[i+1] == 1 and delilac<=10):
             delilac+=11
         else:
-            delilac+=spil[i+1]
+            if (delilac<17):
+                delilac+=spil[i+1]
+            else:
+                #ako delilac ima vise od 17 uzece kartu samo ako nece preci 21
+                if(delilac + spil[i+1] <= 21):
+                    delilac += spil[i+1]
 
         i+=2 #jer prvo uzima igrac pa delilac pa opet igrac pa opet delilac
 
